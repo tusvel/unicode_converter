@@ -1,5 +1,15 @@
 class Unicode
 {
+  static instance?: Unicode;
+
+  constructor() {
+    if (Unicode.instance) {
+      return Unicode.instance;
+    }
+
+    Unicode.instance = this;
+  }
+
   get(str: string): string[]
   {
     // Array or char points.
@@ -24,9 +34,29 @@ class Unicode
 
 class UTF8
 {
-  code(str: string)
-  {
+  textEncoder = new TextEncoder();
+  static instance?: UTF8;
 
+  constructor() {
+    if (UTF8.instance) {
+      return UTF8.instance;
+    }
+
+    UTF8.instance = this;
+  }
+
+  code(str: string): string[]
+  {
+    const result: string[] = [];
+    for (const char of str)
+    {
+      const arr = this.textEncoder.encode(char);
+      for (const binary of arr)
+      {
+        result.push(binary.toString(2));
+      }
+    }
+    return result;
   }
 }
 
@@ -48,6 +78,7 @@ class Data
 
   getUTF8()
   {
+    return this.utf8.code(this.text);
   }
 }
 
@@ -56,12 +87,9 @@ const data = new Data();
 const input = document.getElementById('input') as HTMLInputElement;
 const unicode = document.getElementById('unicode') as HTMLDivElement;
 const utf8 = document.getElementById('utf8') as HTMLDivElement;
-const utf16 = document.getElementById('utf16') as HTMLDivElement;
-const utf32 = document.getElementById('utf32') as HTMLDivElement;
 
 input.addEventListener('keyup', () => {
   data.setText(input.value);
   unicode.innerText = data.getUnicode().join(', ');
+  utf8.innerText = data.getUTF8().join(' ');
 })
-
-document.getElementById('utf')
