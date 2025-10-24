@@ -24,16 +24,10 @@ class Unicode
 
 class UTF8
 {
-  // get(str: string)
-  // {
-  //   const values: string[] = [];
-  //   for (const char of str) {
-  //     const codePoint = char.charCodeAt(0).toString(2);
-  //     const bites = "0".repeat(8 - codePoint.length) + codePoint;
-  //     values.push(bites);
-  //   }
-  //   return values;
-  // }
+  code(str: string)
+  {
+
+  }
 }
 
 class Data
