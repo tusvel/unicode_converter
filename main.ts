@@ -51,9 +51,11 @@ class UTF8
     for (const char of str)
     {
       const arr = this.textEncoder.encode(char);
-      for (const binary of arr)
+      for (const el of arr)
       {
-        result.push(binary.toString(2));
+        const binary = el.toString(2);
+        const zeroes = "0".repeat(8 - binary.length);
+        result.push(zeroes + binary);
       }
     }
     return result;

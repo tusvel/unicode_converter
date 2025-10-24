@@ -62,8 +62,10 @@ var UTF8 = /** @class */ (function () {
                 var arr = this.textEncoder.encode(char);
                 try {
                     for (var arr_1 = (e_3 = void 0, __values(arr)), arr_1_1 = arr_1.next(); !arr_1_1.done; arr_1_1 = arr_1.next()) {
-                        var binary = arr_1_1.value;
-                        result.push(binary.toString(2));
+                        var el = arr_1_1.value;
+                        var binary = el.toString(2);
+                        var zeroes = "0".repeat(8 - binary.length);
+                        result.push(zeroes + binary);
                     }
                 }
                 catch (e_3_1) { e_3 = { error: e_3_1 }; }
