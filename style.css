@@ -1,0 +1,27 @@
+body {
+    font-family: "Cascadia Code", sans-serif;
+}
+
+.content {
+    max-width: 580px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+.label {
+    display: flex;
+    justify-content: center;
+}
+
+.section {
+    margin-bottom: 20px;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex b {
+    flex: 0 0 130px;
+}

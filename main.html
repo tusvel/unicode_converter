@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Unicode Converter</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cascadia+Code:ital,wght@0,200..700;1,200..700&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="content">
+        <div class="section">
+            <label class="label">
+                <input autocomplete="off" autocapitalize="none" type="text" id="input" placeholder="Your text here:"/>
+            </label>
+        </div>
+        <div class="section">
+            <div class="flex">
+                <b>Unicode view:</b>
+                <span id="unicode"></span>
+            </div>
+        </div>
+        <div class="section">
+            <div class="flex">
+                <b>UTF-8 view:</b>
+                <span id="utf8">00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000</span>
+            </div>
+        </div>
+        <div class="section">
+            <div class="flex">
+                <b>UTF-16 view:</b>
+                <span id="utf16">0000000000000000 0000000000000000 0000000000000000 0000000000000000 0000000000000000 0000000000000000 0000000000000000</span>
+            </div>
+        </div>
+        <div class="section">
+            <div class="flex">
+                <b>UTF-32 view:</b>
+                <span id="utf32">00000000000000000000000000000000 00000000000000000000000000000000 00000000000000000000000000000000 00000000000000000000000000000000 00000000000000000000000000000000 00000000000000000000000000000000 00000000000000000000000000000000</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js" defer></script>
+</body>
+</html>
